@@ -3,7 +3,7 @@
 ### Run the script as root because you need to access system sockets
 
 ```commandline
-  python3 dns_from_socket.py -f ./filename -d IP_OF_DNS_SERVER
+  python3 dns_from_socket.py -f ./filename -d IP_OF_DNS_SERVER -r 10
 ```
 
 ```commandline
