@@ -50,15 +50,15 @@ def build_dns_header(query_id):
 
 
 def build_dns_question(hostname):
-    # Формируем DNS вопрос
+    # forming a DNS question
     question = b''
     labels = hostname.split('.')
     for label in labels:
         length = len(label)
         question += bytes([length]) + label.encode('utf-8')
-    question += b'\x00'  # Завершаем вопрос нулевым байтом
-    question += b'\x00\x01'  # Тип запроса (A - IPv4)
-    question += b'\x00\x01'  # Класс запроса (IN - Internet)
+    question += b'\x00'  # end the question with a null byte
+    question += b'\x00\x01'  # Request Type (A - IPv4)
+    question += b'\x00\x01'  # Request class (IN - Internet)
 
     return question
 
